@@ -9,7 +9,8 @@ public class Main {
     }
 
     private void run(String[] args) {
-        WordManager wordmanager1 = new WordManager();
-        wordmanager1.Menu();
+        WordManager wordmanager = new WordManager();
+        wordmanager.Action();
+
     }
 }

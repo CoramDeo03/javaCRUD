@@ -45,4 +45,14 @@ public class Word {
     public void setMeaning(String meaning) {
         this.meaning = meaning;
     }
+
+    @Override
+    public String toString() {
+        String slevel = "";
+        for(int i=0;i<level;i++)
+            slevel=slevel += "*"; // 난이도 만들기.
+        String str= String.format("%-3s",slevel)
+                +String.format("%15s",word)+" "+meaning;
+        return str;
+    }
 }
