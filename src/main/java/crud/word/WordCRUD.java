@@ -22,9 +22,8 @@ public class WordCRUD implements ICRUD{
         String meaning = scanner.nextLine();
         return new Word(0,level,word,meaning);
     }
-// 새로운 워드를 리스트에 넣고, 인터페이스 역할..
     public void AddWord(){
-        Word one = (Word)Add(); // 이게 뭐한거임??? ㅋㅋㅋㅋ
+        Word one = (Word)Add(); // object를 Word로 설정..
         list.add(one);
         System.out.println("\n새 단어가 단어장에 추가되었습니다 !!! ");
     }
