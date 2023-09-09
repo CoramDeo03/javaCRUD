@@ -47,7 +47,7 @@ public class WordCRUD implements ICRUD{
         Word word= new Word();
         System.out.println("--------------------------------");
 for(int i=0;i<list.size();i++){
-    // word 받고 to string ㄴㅓㅎ어줘
+    // word 받고 to string 넣어줘
     word=list.get(i);
     System.out.print((i+1)+" ");
     System.out.println(word.toString());
