@@ -1,5 +1,8 @@
 package crud.word;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -30,6 +33,15 @@ public class WordCRUD implements ICRUD{
 
     @Override
     public int Update(Object obj) {
+        System.out.println("=> 수정할 단어 검색 : ");
+        String word = scanner.nextLine();
+        for(int i=0;i<list.size();i++){
+           // if(((list.get(i)).getWord()).compareTo(word)==0)
+
+
+
+
+        }
         return 0;
     }
 
@@ -40,6 +52,33 @@ public class WordCRUD implements ICRUD{
 
     @Override
     public void SelectOne(int id) {
+
+    }
+
+    public void loadFile(){
+        try {
+            BufferedReader br = new BufferedReader(new FileReader("fname"));
+            String line;
+            int count=0;
+            //  자.... 읽어 드려서 각자 워드에 넣어 줘야됨... 그럼 .. word를 정의하고, 그걸 arraylist에 넣어야 함.
+            while(true) {
+                line = br.readLine();
+                if(line==null) break;
+                String data[] = line.split("\\|");
+                int level = Integer.parseInt( data[0]);
+                String name = data[1];
+                String meaning= data[3];
+                list.add(new Word(0,level,name,meaning));
+                count++;
+            }
+            System.out.println("=> "+count+"개 단어 로딩 완료!\n");
+            br.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void saveFile(){
 
     }
 

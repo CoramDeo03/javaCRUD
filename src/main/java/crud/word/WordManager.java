@@ -1,5 +1,6 @@
 package crud.word;
 
+
 import java.util.Scanner;
 
 public class WordManager {
@@ -7,6 +8,8 @@ public class WordManager {
     // 사용자에게 보이는 공간
     //Scanner scanner;
     private int menu;
+
+    final String fname = "Dictionary.txt";
 
     public int getMenu() {
         return menu;
@@ -24,8 +27,10 @@ public class WordManager {
         menu=scanner.nextInt();
         System.out.println("");
     }
+
     public void Action(){
         WordCRUD wordcrud=new WordCRUD(scanner);
+        wordcrud.loadFile();
         System.out.println("*** 영단어 마스터 ***");
         while(true) {
             Menu();
@@ -36,6 +41,7 @@ public class WordManager {
                 wordcrud.AddWord();
             else if (menu == 1)
                 wordcrud.ListAll();
+
         }
     }
 
