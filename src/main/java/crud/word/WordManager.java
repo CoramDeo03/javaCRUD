@@ -9,8 +9,6 @@ public class WordManager {
     //Scanner scanner;
     private int menu;
 
-    final String fname = "Dictionary.txt";
-
     public int getMenu() {
         return menu;
     }

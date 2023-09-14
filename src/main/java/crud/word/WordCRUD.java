@@ -10,6 +10,7 @@ public class WordCRUD implements ICRUD{
     Scanner scanner= new Scanner(System.in);
 
     ArrayList <Word> list;
+    final String fname = "Dictionary.txt";
 
     WordCRUD(Scanner scanner){
         list = new ArrayList<>();
@@ -57,7 +58,8 @@ public class WordCRUD implements ICRUD{
 
     public void loadFile(){
         try {
-            BufferedReader br = new BufferedReader(new FileReader("fname"));
+            System.out.println("haha");
+            BufferedReader br = new BufferedReader(new FileReader(fname));
             String line;
             int count=0;
             //  자.... 읽어 드려서 각자 워드에 넣어 줘야됨... 그럼 .. word를 정의하고, 그걸 arraylist에 넣어야 함.
@@ -67,7 +69,7 @@ public class WordCRUD implements ICRUD{
                 String data[] = line.split("\\|");
                 int level = Integer.parseInt( data[0]);
                 String name = data[1];
-                String meaning= data[3];
+                String meaning= data[2];
                 list.add(new Word(0,level,name,meaning));
                 count++;
             }
