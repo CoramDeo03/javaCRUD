@@ -69,12 +69,12 @@ public class WordCRUD implements ICRUD{
     }
 
     public void searchLevel(){
-        System.out.println("=> 레벨(1:초급, 2:중급, 3:고급) 선택 : ");
+        System.out.print("=> 레벨(1:초급, 2:중급, 3:고급) 선택 : ");
         int level = scanner.nextInt();
         ListAll(level);
     }
     public void searchWord(){
-        System.out.println("=> 검색할 단어 입력 : ");
+        System.out.print("=> 검색할 단어 입력 : ");
         String sword = scanner.next();
         ListAll(sword);
     }
@@ -142,6 +142,8 @@ for(int i=0;i<list.size();i++){
                 System.out.println(word.toString());
             }
         }
+        System.out.println("--------------------------------");
+
         return kwlist;
     }
         public void ListAll( int level ){
