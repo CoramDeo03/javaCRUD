@@ -31,8 +31,6 @@ public class WordCRUD implements ICRUD{
     }
 
     @Override
-    public int Update(Object obj) {return 0;}
-
     public void updateWord(){
         Word Word= new Word();
         System.out.print("=> 수정할 단어 검색 : ");
@@ -49,14 +47,9 @@ public class WordCRUD implements ICRUD{
     }
 
     @Override
-    public int Delete(Object obj) {
-
-        return 0;
-    }
-
-    @Override
     public void SelectOne(int id) {}
 
+    @Override
     public void worDelete(){
         Word Word= new Word();
         System.out.print("=> 삭제할 단어 검색 : ");
@@ -77,9 +70,14 @@ public class WordCRUD implements ICRUD{
 
     public void searchLevel(){
         System.out.println("=> 레벨(1:초급, 2:중급, 3:고급) 선택 : ");
-
+        int level = scanner.nextInt();
+        ListAll(level);
     }
-
+    public void searchWord(){
+        System.out.println("=> 검색할 단어 입력 : ");
+        String sword = scanner.next();
+        ListAll(sword);
+    }
 
     public void loadFile(){
         try {
@@ -151,7 +149,7 @@ for(int i=0;i<list.size();i++){
             System.out.println("--------------------------------");
             for(int i=0;i<list.size();i++) {
                 int ilevel= list.get(i).getLevel();
-                if(ilevel != level) cotinue;
+                if(ilevel != level) continue;
                 System.out.print((j + 1) + " ");
                 System.out.println(list.get(i).toString());
                 j++;

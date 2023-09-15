@@ -43,7 +43,7 @@ public class WordManager {
             else if(menu==2)
                 wordcrud.searchLevel();
             else if(menu==3)
-                wordcrud.ListAll();
+                wordcrud.searchWord();
             else if(menu==5)
                 wordcrud.updateWord();
             else if(menu==6)

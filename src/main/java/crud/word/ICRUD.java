@@ -2,7 +2,7 @@ package crud.word;
 
 public interface ICRUD {
     public Object Add();
-    public int Update(Object obj);
-    public int Delete(Object obj);
+    public void updateWord();
+    public void worDelete();
     public void SelectOne(int id);
 }
