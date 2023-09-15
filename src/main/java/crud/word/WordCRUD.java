@@ -144,25 +144,20 @@ for(int i=0;i<list.size();i++){
                 System.out.println(word.toString());
             }
         }
-     }
+        return kwlist;
+    }
         public void ListAll( int level ){
             int j=0;
-            ArrayList<Integer> kwlist = new ArrayList<>();
             System.out.println("--------------------------------");
-            int j=0;
             for(int i=0;i<list.size();i++) {
-                String kword=list.get(i).getWord();
-                if(kword.contains(keyword)){
-                    kwlist.add(i);
-                    word=list.get(i);
-                    System.out.print((j+1)+" ");
-                    j++;
-                    System.out.println(word.toString());
-                }
+                int ilevel= list.get(i).getLevel();
+                if(ilevel != level) cotinue;
+                System.out.print((j + 1) + " ");
+                System.out.println(list.get(i).toString());
+                j++;
             }
         // update.. 일치하는거 찾고... print,.
         System.out.println("--------------------------------");
-        return kwlist;
     }
 
 }
