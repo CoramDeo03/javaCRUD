@@ -1,6 +1,7 @@
 package crud.word;
 
 
+import java.io.*;
 import java.util.Scanner;
 
 public class WordManager {
@@ -39,9 +40,20 @@ public class WordManager {
                 wordcrud.AddWord();
             else if (menu == 1)
                 wordcrud.ListAll();
+            else if(menu==2)
+                wordcrud.searchLevel();
+            else if(menu==3)
+                wordcrud.ListAll();
+            else if(menu==5)
+                wordcrud.updateWord();
+            else if(menu==6)
+                wordcrud.worDelete();
+            else if(menu==7)
+                wordcrud.saveFile();
 
         }
     }
+
 
 
 
